@@ -2,7 +2,6 @@ import java.lang.Math;
 
 public class Main {
     public static void main(String[] args) {
-        // You can call the findDifference method here with an array of integers
         int[] numbers = {10, 5, 2, 8};
         int difference = findDifference(numbers);
         System.out.println("-------------------------------------------");
@@ -67,7 +66,3 @@ public class Main {
     }
 
 }
-
-//Task 1
-//Write a Java method that returns the difference between the
-//largest and smallest values in an array of integers. The length of the array must be at least 1.
