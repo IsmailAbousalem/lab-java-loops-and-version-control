@@ -1,11 +1,22 @@
-//package lab-java-loops-and-version-control;
+import java.lang.Math;
 
 public class Main {
     public static void main(String[] args) {
         // You can call the findDifference method here with an array of integers
-        int[] myArray = {10, 5, 2, 8};
-        int difference = findDifference(myArray);
+        int[] numbers = {10, 5, 2, 8};
+        int difference = findDifference(numbers);
+        System.out.println("-------------------------------------------");
         System.out.println("Difference between largest and smallest: " + difference);
+        System.out.println("-------------------------------------------");
+
+        int[] smallestArray = {3,5,1,9,2};
+        findSmallest(smallestArray);
+
+        double xValue = 2.0;
+        double yValue = 3.0;
+        double finalResult = evaluateExpression(xValue, yValue);
+        System.out.println("Result of the expression: " + finalResult);
+        System.out.println("-------------------------------------------");
     }
 
     public static int findDifference(int[] numbers) {
@@ -26,6 +37,33 @@ public class Main {
             }
         }
         return max - min;
+    }
+
+
+    public static void findSmallest(int[] numbers) {
+        if (numbers.length < 2) {
+            System.out.println("Array must contain at least two elements");
+        }
+
+        int smallest = Integer.MAX_VALUE;
+        int secondSmallest = Integer.MAX_VALUE;
+
+        for (int number : numbers) {
+            if (number < smallest) {
+                secondSmallest = smallest;
+                smallest = number;
+            } else if (number < secondSmallest && number != smallest) {
+                secondSmallest = number;
+            }
+        }
+
+        System.out.println("The smallest element is: " + smallest);
+        System.out.println("The second smallest element is: " + secondSmallest);
+        System.out.println("-------------------------------------------");
+    }
+
+    public static double evaluateExpression(double x, double y) {
+        return Math.pow(x, 2) + Math.pow((4 * y / 5 - x), 2);
     }
 
 }
